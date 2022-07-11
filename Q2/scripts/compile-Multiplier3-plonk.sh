@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # [assignment] create your own bash script to compile Multiplier3.circom using PLONK below
 
@@ -20,6 +21,7 @@ circom Multiplier3.circom --r1cs --wasm --sym -o Multiplier3
 snarkjs r1cs info Multiplier3/Multiplier3.r1cs
 
 # Start a new zkey and make a contribution
+# PLONK doesn't require contributions in phase 2, so that part is skipped.
 snarkjs plonk setup Multiplier3/Multiplier3.r1cs powersOfTau28_hez_final_10.ptau Multiplier3/circuit_0000.zkey
 snarkjs zkey verify Multiplier3/Multiplier3.r1cs powersOfTau28_hez_final_10.ptau Multiplier3/circuit_final.zkey
 snarkjs zkey export verificationkey Multiplier3/circuit_final.zkey Multiplier3/verification_key.json

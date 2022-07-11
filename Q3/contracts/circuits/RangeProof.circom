@@ -13,13 +13,13 @@ template RangeProof(n) {
 
     // [assignment] insert your code here
 
-    low.in[0] <== in;
-    low.in[1] <== range[0];
-    low.out === 1;
+    lt.in[0] <== in;
+    lt.in[1] <== range[0];
+    lt.out === 1;
 
-    high.in[0] <== in;
-    high.in[1]<==range[1];
-    high.out === 1; 
+    gt.in[0] <== in;
+    gt.in[1] <== range[1];
+    gt.out === 1; 
 
-    out <== low.out * high.out; 
+    out <== lt.out * gt.out; 
 }
